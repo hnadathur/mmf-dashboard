@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mmf-dashboard/static/css/main.e6c13ad2.css",
+    "main.js": "/mmf-dashboard/static/js/main.d46e4646.js",
+    "index.html": "/mmf-dashboard/index.html",
+    "main.e6c13ad2.css.map": "/mmf-dashboard/static/css/main.e6c13ad2.css.map",
+    "main.d46e4646.js.map": "/mmf-dashboard/static/js/main.d46e4646.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.d46e4646.js"
+  ]
+}
