@@ -30,10 +30,10 @@ function App() {
     fetchData();
 
     // Set up an interval to fetch data every 5 seconds
-    const intervalId = setInterval(fetchData, 60000);
+    //const intervalId = setInterval(fetchData, 60000);
 
     // Clear interval on component unmount to prevent memory leaks
-    return () => clearInterval(intervalId);
+    //return () => clearInterval(intervalId);
   }, []);
   
 
