@@ -30,7 +30,7 @@ function App() {
     fetchData();
 
     // Set up an interval to fetch data every 5 seconds
-    const intervalId = setInterval(fetchData, 30000);
+    const intervalId = setInterval(fetchData, 60000);
 
     // Clear interval on component unmount to prevent memory leaks
     return () => clearInterval(intervalId);
@@ -41,6 +41,9 @@ function App() {
     .filter(icoe => icoe.id !== "icoe") // Exclude users with name "John Doe"
     .sort((a, b) => a.id.localeCompare(b.id)); // Sort users alphabetically by name
 
+  const icoeBusinessGroupBalance = icoeBalances.find((item) => item.id === "icoe");
+  const aiBusinessGroupBalance = aiBalances.find((item) => item.id === "ai");
+
 
   const filteredAiBalances = aiBalances
     .filter(ai => ai.id !== "ai") // Exclude posts with title "Untitled"
@@ -50,19 +53,20 @@ function App() {
   const alternateNames = {
     "rahul": "Rahul Nair",
     "ashish": "Ashish Jain",
-    "swapna": "Swapna LastName",
+    "swapna": "Swapna Venugopal",
     "hari": "Hari Nadathur",
     // Add more mappings as needed
   };
 
 
   return (
-    <div className="App">
+<div className="App">
       {loading ? (
         <div>Loading...</div>
       ) : (
         <>
-          <h2>ICOE Balances</h2>
+          <h2>ICOE Business Group</h2>
+          <h3>Group budget remaining: {icoeBusinessGroupBalance.balance[0].value}</h3>
 
           <table border={1}>
             <tr>
@@ -79,8 +83,8 @@ function App() {
             ))}
           </table>
 
-          <h2>AI Balances</h2>
-
+          <h2>AI Business Group</h2>
+          <h3>Group budget remaining: {aiBusinessGroupBalance.balance[0].value}</h3>
           <table border={1}>
             <tr>
               <th>Name</th>
